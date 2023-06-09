@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        /* navigation bar starts  */
+        .nav1{
+            width: 100%;
+            height:80px;
+            background-color:black;
+            position: relative;
+        }
+        a{
+            padding: 5px;
+            font-size:10px;
+            text-decoration: none;
+        }
+        .hover{
+            padding: 20px;
+            font-size: 22px;
+            top: 10px;
+        }
+        .nav3{
+            position: relative;
+            left:80%;
+             margin-top: -35px;
+        }
+        .p1{
+            margin-top: 20px;
+            color: white;
+            display: none;
+            background-size: 30px;
+            background-color: rgb(0, 0, 0);
+            font-size: 20px;
+        }
+        .nav3:hover p{
+            display: block;
+            color:white;
+        }
+        .nav4{
+            position: relative;
+            left:90%;
+            margin-top: -50px;      
+        }
+       
+        .p1{
+            color: rgb(196, 196, 196);
+            display: none;
+          }
+        .nav4:hover p{
+           display: block;
+            color:rgb(208, 208, 208);
+        }
+        /* navigation bar complete */
+        /* main slides starts  */
+        .div{
+            overflow: hidden;
+        }
+        .div1{
+            position: relative;
+            width: 500%;
+            margin: 0px;
+            left: 0px;
+            top: 10px;
+            animation: slider  10s  infinite;
+            opacity: 0;
+        }
+        #a{
+            float: left;
+            width: 20%;
+        }
+        @keyframes slider {
+            20%  {  left: 0; }
+            40%  {left:-100%;} 
+            60%  {left:-200%;}
+            80%  {left:-300%;}
+            100% {left:-400%;}
+            }
+            /* main sslides ends  */
+             /* sub slieds starts  */
+             .div2{
+             margin-top: 340px;
+             margin-left: 0px;
+        }
+        .sub1{
+            width: 200%;
+            height: 180px;
+            margin: 5px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+             }
+            .sub1 img{
+                margin:0px;
+                width: 19%;height: 150px; float: left;
+                transition: all 0.5s;
+             }
+             .sub1 img:hover{
+                transform: scale(1.2);
+             } 
+        .sub1{
+            position: relative;
+            width: 200%;
+            margin: 0px;
+            top: 50px;
+        }
+        .sub1:hover{
+            animation: slider1  10s  infinite alternate;
+        }
+        .sub1 img{
+            float: left;
+            margin-top: -20px;
+            width: 20%;
+        }
+        @keyframes slider1 {
+            20%{ left: 0;}
+            40%{ left:-50%;} 
+            60%{left:-100%;}
+        }
+            .div4{ margin-top: 60px;}
+            .div5{ margin-top: 60px;}
+            .div6{ margin-top: 60px;}
+            .div7{ margin-top: 60px;}
+            .div8{ margin-top: 60px;}
+            .div9{ margin-top: 60px;}
+            .div10{ margin-top:60px;}
+            .div11{ margin-top:60px;}
+            .div12{ margin-top:60px;}
+            .div13{margin-top: 60px;}
+            /* sub slides ends  */
+            /* socila media  links  */
+            .div3{
+            width: 100%;
+            height: 300px;
+            background-color: aqua;
+            margin-top: 20px;
+        }
+        .parent2{
+            width: 100%;
+            height: 300px;
+            background-color: rgb(18, 20, 20);
+        }
+        .parent2 ul{
+            display: inline-flex;
+            list-style: none;
+            font-size: 20px;
+        }
+        .parent2 ul li{
+            padding: 5px;
+            margin-top: 50px;
+        }
+        .parent2 ul li:hover{
+            display: block;
+        }
+        /* social media ends  */
+        /* buttons slides */
+        #container{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            height: 900px;
+            background-image: url(img5.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 300px;
+            margin-top: 110px;
+        }
+        button{
+           /* width: 60px;
+           height: 60px; */
+           background-color: rgba(0, 255, 255, 0);
+           /* border-radius: 100%; */
+           font-size: 40px;
+           border: none;
+           color: white;
+        }
+        #btn1{
+            position: relative;
+            left: -690px;
+            box-shadow: 10px 10px  white 0.5;
+        }
+        #btn2{
+            position: relative;
+            left:690px;
+        }
+        button :hover{
+             color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="btn1" onclick="left()"><</button>
+        <button id="btn2" onclick="right()">></button>
+    </div>
+    <script>
+        var img=["img5.jpeg","img2.jpeg","img4.jpeg","img3.jpeg","img1.jpeg"]
+        console.log(img.length)
+        console.log(document)
+        var i=0;
+        function right()
+        {
+            if(i<=img.length-1)
+            {
+                document.getElementById("container").style.backgroundImage=`url(${img[i]})`
+                i++;
+            }
+        }
+        var j=img.length-1;
+        function left()
+        {
+            if(j>=0)
+            {
+                document.getElementById("container").style.backgroundImage=`url(${img[j]})`
+                j--;   
+            }
+        }
+       
+    </script>
+    <div class="nav1">
+        <div class="nav2">
+            <a href=""   class="hover"> <img src="amazon mini.tv.png" alt="" style="width:180px; height:40px; margin-top: 40px; margin-left: 20px;"></a>
+             <a href="https://www.amazon.in/minitv" target="_blank" class="hover"  style="color: rgb(223,22,117); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 5px;"> <b>Home</b> </a>
+             <a href="https://www.amazon.in/minitv/ct/web-series" target="_blank"  class="hover" style="color:white;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> <b>Web Series</b></a>
+             <a href="https://www.amazon.in/minitv/ct/mini-movies"target="_blank"  class="hover" style="color:white;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>mini Movies</b></a>
+             <a href="https://www.amazon.in/minitv/ct/comedy" target="_blank"      class="hover" style="color:white;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Comedy</b></a>
+        </div>
+        <div class="nav3">
+           <a href="https://www.amazon.in/" target="_blank"  class="a"><i class="fa fa-amazon" style="color: rgb(232, 137, 20); font-size: 30px;"></i></a>
+           <p>Go To Amazon</p>
+        </div>
+        <div class="nav4">
+            <a href="" class="a"><i class="fa fa-gear" style="color: silver;font-size: 30px;"></i></a>
+            <p>Parental Control<br></p>
+             <p> Delete your miniTV Data</P>
+            </div>
+            <!-- main slides starts  -->
+            <!-- <div class="div1">
+                <div>
+                   <a href="https://www.amazon.in/minitv/tp/5cf7a5b5-51f1-4bf9-a13c-39502bb162bf" target="_blank"> <img id="a" src="img5.jpeg" alt=""></a>
+                    <a href="https://www.amazon.in/minitv/tp/9fdbdeeb-f6cf-47b0-942b-7dcda3ceb7e2" target="_blank"><img id="a" src="img2.jpeg" alt=""></a>
+                   <a href="https://www.amazon.in/minitv/tp/a9166336-17d3-4bb3-b529-f591b35a8520" target="_blank"> <img id="a" src="img4.jpeg" alt=""></a>
+                    <a href="https://www.amazon.in/minitv/tp/e41afa30-0a63-4432-a047-2ab2fd016024" target="_blank"><img id="a" src="img3.jpeg" alt=""></a>
+                    <a href="https://www.amazon.in/minitv/tp/3ff89859-954d-415f-a71a-f41b4a69975a" target="_blank"><img id="a" src="img1.jpeg" alt=""></a>
+                </div>
+                </div> -->
+                 <!-- sub slides starts  -->
+                 <div class="div2">
+                  <div class="x" style="color: aliceblue;font-size: 20px; margin-left: 30px;"><b>Trending Top 10 on miniTV<b></div>
+                   <div class="sub1">
+                      <a href="https://www.amazon.in/minitv/tp/53e84807-e889-4634-a5fc-8c903fb3b587" target="_blank"><img src="t-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/5cf7a5b5-51f1-4bf9-a13c-39502bb162bf" target="_blank"><img src="t-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/c50e894d-1f89-412c-b770-3f235ade8951" target="_blank"><img src="t-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/d6f5b593-753f-4e08-abfe-ad9d71b4afdc" target="_blank"><img src="t-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/97a9fc97-4ad4-4b11-b237-f0fd3ba96cc3" target="_blank"><img src="t-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/a7081cb6-2d9c-4fe8-8014-b0a48433cf6a" target="_blank"><img src="t-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/80abcb2d-9067-4b35-b4a3-af93a6636172" target="_blank"><img src="t-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/9fdbdeeb-f6cf-47b0-942b-7dcda3ceb7e2" target="_blank"><img src="t-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/51676b21-1ad8-457d-94d2-a460b7e7b341" target="_blank"><img src="t-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                      <a href="https://www.amazon.in/minitv/tp/2de3908c-f305-43af-bc67-f14bd10c4373" target="_blank"><img src="t10.jpg" alt="" style="width: 280px; height: 160px;"></a>
+               </div>
+            </div>
+            <div class="div4">
+                <div class="x" style="color: aliceblue; font-size: 20px;margin-left: 30px;"><b>Popular Web Series</b></div>
+                <div class="sub1">
+                   <a href="https://www.amazon.in/minitv/tp/98bc48cf-c3f7-6def-ed9b-dee974615c25"target="_blank"><img src="p-2-1.jp-2g.jpg"  style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/3f167cf9-8b9c-498a-9635-4759c1f2b79b" target="_blank"><img src="p-2-2.jpg"       style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/54868701-6e59-4d5d-928d-729e12625d27" target="_blank"><img src="p-2-3.jp-2g.jpg" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/9534dd7e-bc63-4994-be25-218d65f2f42d" target="_blank"><img src="p-2-4.jp-2g.jpg" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/97bc2b60-d9a7-4e8f-8364-e8141d1957c3" target="_blank"><img src="p-2-5.jp-2g.jpg" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/36bbefcc-7aa9-06c7-2704-535e8f8f0a9a" target="_blank"><img src="p-2-6.jp-2g.jpg" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/1a226a2c-395d-4c43-894d-0a821b9d2d1d" target="_blank"><img src="p-2-7.jp-2g.jpg" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/720a15c8-0aed-466a-a9ab-d1caa7ad42e1" target="_blank"><img src="p-2-8.jp-2g.jpg" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/debbf698-583d-e7f3-20ea-bc487c8c7bea" target="_blank"><img src="p-2-9.jp-2g.jpg" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/3a439908-add7-43be-baff-43df5944bfcd" target="_blank"><img src="o-11.jpg" style="width: 280px; height: 180px;"></a>
+                </div>
+            </div>
+            <div class="div5">
+                <div class="x" style="color: aliceblue; font-size: 20px;margin-left: 30px;"><b>Horror,Thriller & Mystery</b></div>
+                <div class="sub1">
+                    <a href="https://www.amazon.in/minitv/tp/97bc2b60-d9a7-4e8f-8364-e8141d1957c3" target="_blank"><img src="h1.jpg" alt=""  style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/3ff89859-954d-415f-a71a-f41b4a69975a" target="_blank"><img src="h-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/53e84807-e889-4634-a5fc-8c903fb3b587" target="_blank"><img src="h-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/74271cb6-e19e-445b-a648-e15a3912b8ef" target="_blank"><img src="h-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/68c8b283-8cd6-4140-a497-66a5a20ffe34" target="_blank"><img src="h-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/e41afa30-0a63-4432-a047-2ab2fd016024" target="_blank"><img src="h-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/2efca23c-eb2a-4585-a395-92ac5c64974b" target="_blank"><img src="g-11.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/0aad709a-71fe-41e5-8433-63b2111be67a" target="_blank"><img src="i-11.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/6ed99a08-16e9-4177-a442-f83fb405c014" target="_blank"><img src="m-11.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/e41afa30-0a63-4432-a047-2ab2fd016024" target="_blank"><img src="m-12.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    </div>
+                    </div>
+                        <div class="div6">
+                            <div class="x" style="color: aliceblue;font-size: 20px;margin-left: 30px;"><b>Classic Hits - Shows We all Love!</b></div>
+                            <div class="sub1">
+                   <a href="https://www.amazon.in/minitv/tp/99febc8a-11ca-4337-ad45-3a6d2b529efb" target="_blank"><img src="c-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/dfc52079-3c3f-43d9-806d-02171d636838" target="_blank"><img src="c-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/0f596073-6738-4a4d-b256-ff816df62c32" target="_blank"><img src="c-3.jpg" alt="" style="width: 280px; height: 170px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/97a9fc97-4ad4-4b11-b237-f0fd3ba96cc3" target="_blank"><img src="c-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/2de3908c-f305-43af-bc67-f14bd10c4373" target="_blank"><img src="c-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/12eb62f8-1d76-436b-8f3a-e0dca68e52fc" target="_blank"><img src="c-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/a7081cb6-2d9c-4fe8-8014-b0a48433cf6a" target="_blank"><img src="c-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/89566a99-e58a-4d38-9d5d-63fe8b0b0c33" target="_blank"><img src="c-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/74bbdfd6-8f19-0f8a-2ac7-2e4be3868227" target="_blank"><img src="c-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/68c8b283-8cd6-4140-a497-66a5a20ffe34" target="_blank"><img src="m-13.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                </div>
+                </div>
+                <div class="div7">
+                    <div class="x" style="color: aliceblue;font-size: 20px;margin-left: 30px;"><b>Most Loved Vidoes</b></div>
+                    <div class="sub1">
+                   <a href="https://www.amazon.in/minitv/tp/c6bbdff2-880e-c425-3185-e5acf96212f2" target="_blank"><img src="m-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/7de8c022-c089-4260-9001-dcc2b25087fe" target="_blank"><img src="m-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/e4bbebf4-e610-f5ef-b84c-cb63a81ac1c6" target="_blank"><img src="m-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/cdd3896a-f084-4274-8b7e-d5d0b3afe7ca" target="_blank"><img src="m-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/dec3c835-ea44-48d7-a63a-7e1912c94e15" target="_blank"><img src="m-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/debbf698-583d-e7f3-20ea-bc487c8c7bea" target="_blank"><img src="m-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/20331016-d9b9-4968-b991-c89fa4927a36" target="_blank"><img src="m-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/d4ca34f1-1434-4438-8492-453f71ef7c07" target="_blank"><img src="m-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/2a68e8bd-755d-4545-a4f6-710bd0d15840" target="_blank"><img src="m-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/36cb4081-de08-4228-9e86-445cab4928c9" target="_blank"><img src="m-10.jpg" alt="" style="width: 280px;height: 160px;"></a>
+             </div>
+         </div>
+            <div class="div8">
+                        <div class="x" style="color: aliceblue;font-size: 20px;margin-left: 30px;"><b>Top-Picks for You</b></div>
+                        <div class="sub1">
+                   <a href="https://www.amazon.in/minitv/tp/9c8353da-49dd-4476-aa26-3771315f660a" target="_blank"><img src="o-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/0cbc465b-71da-f006-088a-ef4876826262" target="_blank"><img src="o-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/456bb1e1-3ffc-4b1f-be24-8437e3a2c886" target="_blank"><img src="o-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/ed614406-8550-4f54-a1d1-8edb10c8b06a" target="_blank"><img src="o-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/0aad709a-71fe-41e5-8433-63b2111be67a" target="_blank"><img src="o-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/91477e94-5bb9-42de-9325-1df1bd96d7d2" target="_blank"><img src="o-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/6b49d70b-5a99-46af-84e7-2966a65a4099" target="_blank"><img src="o-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/2efca23c-eb2a-4585-a395-92ac5c64974b" target="_blank"><img src="o-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/02e72c15-97be-41a5-bc75-ec25e11a9ddb" target="_blank"><img src="o-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   <a href="https://www.amazon.in/minitv/tp/f8f18250-a11e-4884-896b-e81dae7e0030" target="_blank"><img src="o-10.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                </div>
+                </div>
+                        <div class="div9">
+                    <div class="x" style="color:white;font-size: 20px;margin-left: 30px;"><b>Mini Movie Mania</b></div>
+                    <div class="sub1">
+                    <a href="https://www.amazon.in/minitv/tp/dec3c835-ea44-48d7-a63a-7e1912c94e15" target="_blank"><img src="i-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/a9ce25d2-22d4-40ed-9ff4-b8eee02651d0" target="_blank"><img src="i-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/7fabd9e3-119e-4ab4-afe4-7ddf81953c3d" target="_blank"><img src="i-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/ae5c5a39-cfc3-4cf6-b47e-c05b5ed8dc6e" target="_blank"><img src="i-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/a80166fd-df98-4637-821a-0edfffc0486e" target="_blank"><img src="i-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/b8235130-a88c-4fd6-a190-d5227a19d33c" target="_blank"><img src="i-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/280d2564-584f-452f-9c98-7baf906e01ab" target="_blank"><img src="i-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/e2e38e7a-cf0c-4382-b21c-ed4052570435" target="_blank"><img src="i-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/fef8fd8b-b7fe-4ba0-87f4-896ff3efb006" target="_blank"><img src="i-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                    <a href="https://www.amazon.in/minitv/tp/2380b78c-2a91-4ef7-b988-f841fcccac23" target="_blank"><img src="i-10.jpg" alt=""style="width: 280px; height: 160px;"></a>
+                 </div>
+                </div>
+               <div class="div10">
+                <div class="x" style="color: aliceblue;font-size: 20px;margin-left: 30px;"><b>TVF original</b></div>
+                    <div class="sub1">
+                     <a href="https://www.amazon.in/minitv/tp/e4bbebf4-e610-f5ef-b84c-cb63a81ac1c6" target="_blank"><img src="v-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/12eb62f8-1d76-436b-8f3a-e0dca68e52fc" target="_blank"><img src="v-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/74bbdfd6-8f19-0f8a-2ac7-2e4be3868227" target="_blank"><img src="v-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/be3fd3c2-de7e-4c2f-b4f2-ef666cffbe7d" target="_blank"><img src="v-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/69ab70fc-a098-4924-8d15-7d0144078d40" target="_blank"><img src="v-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/c6bbdff2-880e-c425-3185-e5acf96212f2" target="_blank"><img src="v-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/90959763-7266-408c-9498-205786236e60" target="_blank"><img src="v-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/68c8b283-8cd6-4140-a497-66a5a20ffe34" target="_blank"><img src="m-13.jpg" alt=""style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/e41afa30-0a63-4432-a047-2ab2fd016024" target="_blank"><img src="m-12.jpg" alt=""style="width: 280px; height: 160px;"></a>
+                     <a href="https://www.amazon.in/minitv/tp/0b360d8d-80e2-437d-98d3-b77487f2c0ff" target="_blank"><img src="m-11.jpg" alt=""style="width: 280px; height: 160px;"></a>
+                 </div>
+                </div>
+                <div class="div11">
+                    <div class="x" style="color: aliceblue;font-size: 20px;margin-left: 30px;"><b>Comedy Dhamaaka</b></div>
+                        <div class="sub1">
+                         <a href="https://www.amazon.in/minitv/tp/e59f086a-d587-444e-9fa6-a1458af27fad" target="_blank"><img src="d-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/13e7e4a9-63bb-4e23-b8cd-6e8fb235571a" target="_blank"><img src="d-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/54868701-6e59-4d5d-928d-729e12625d27" target="_blank"><img src="d-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/2a6c39f8-4bb6-42d6-b603-ccd100e93339" target="_blank"><img src="d-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/7e24716c-da84-4da3-a6e1-a3ac1bb6bf46" target="_blank"><img src="d-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/0f789273-3c1d-445e-8eae-f65508a68d83" target="_blank"><img src="d-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/0bc16c61-8ede-4521-ae04-d45c83313c8c" target="_blank"><img src="d-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/2701a9e8-b057-40dc-8e3a-e8cb3013afa4" target="_blank"><img src="d-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/6012db3e-da98-4a9e-b829-f4aecf554ae3" target="_blank"><img src="d-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/3a439908-add7-43be-baff-43df5944bfcd" target="_blank"><img src="o-11.jpg" alt="" style="width:280px; height: 160px;"></a>
+                            </div>
+                    </div>
+                    <div class="div12">
+                    <div class="x" style="color: aliceblue;font-size: 20px;margin-left: 30px;"><b>Hidden Gems</b></div>
+                    <div class="sub1">
+                         <a href="https://www.amazon.in/minitv/tp/6c6398ce-ca43-4233-b32b-650c20e66706" target="_blank"><img src="g-1.jpg" alt="" style="width: 260px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/a53878f0-cd3b-485c-8666-d4e37cf7eaad" target="_blank"><img src="g-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/ed614406-8550-4f54-a1d1-8edb10c8b06a" target="_blank"><img src="g-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/d4ca34f1-1434-4438-8492-453f71ef7c07" target="_blank"><img src="g-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/7bf5bd57-1511-426f-99c1-00de7abf6fe7" target="_blank"><img src="g-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/ceae2ece-0ead-401b-84c0-eceaee7996f5" target="_blank"><img src="g-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/934c89d0-8820-4a21-b8be-2accfad8e69d" target="_blank"><img src="g-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/d95ce386-7bcd-44be-8ca3-6f782eec6f97" target="_blank"><img src="g-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/4c5394d0-d6bc-4d8d-9c3b-074977c4a1c2" target="_blank"><img src="g-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                         <a href="https://www.amazon.in/minitv/tp/a9ce25d2-22d4-40ed-9ff4-b8eee02651d0" target="_blank"><img src="g-10.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                   </div>
+                </div>
+                   <div class="div13">
+                   <div class="x" style="color: aliceblue;font-size: 20px;margin-left: 30px;"><b>Top Rated Series & Mini Movies on IMDb</b></div>
+                   <div class="sub1">
+                        <a href="https://www.amazon.in/minitv/tp/1bb04c73-2dcf-42e4-a0f1-bf46deeccf32" target="_blank"><img src="r-1.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/2de3908c-f305-43af-bc67-f14bd10c4373" target="_blank"><img src="r-2.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/12eb62f8-1d76-436b-8f3a-e0dca68e52fc" target="_blank"><img src="r-3.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/e2bbe431-bdab-1c4c-a080-4c4561a647dc" target="_blank"><img src="r-4.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/2d6a8180-0b1b-475d-95ba-a53777d89486" target="_blank"><img src="r-5.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/debbf698-583d-e7f3-20ea-bc487c8c7bea" target="_blank"><img src="r-6.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/e4bbebf4-e610-f5ef-b84c-cb63a81ac1c6" target="_blank"><img src="r-7.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/9fdbdeeb-f6cf-47b0-942b-7dcda3ceb7e2" target="_blank"><img src="t-8.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/fef8fd8b-b7fe-4ba0-87f4-896ff3efb006" target="_blank"><img src="i-9.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                        <a href="https://www.amazon.in/minitv/tp/2380b78c-2a91-4ef7-b988-f841fcccac23" target="_blank"><img src="i-10.jpg" alt="" style="width: 280px; height: 160px;"></a>
+                  </div>
+                  </div>
+                  <!-- social media ends -->
+                  <div class="div3">
+                    <div class="parent2">
+                     <ul>
+                        <li class="list1"> <a href="#" class="hover"> <img src="amazon mini.tv.png" alt="" style="width:180px; height:40px; margin-top: -10px; margin-left: 20px;"></a>
+                        <li class="list1"> <a href="#" class="hover"> <img src="Young_Janta_ko_yahi_mangta.png" alt="" style="width:300px; height:20px; margin-top: -10px; margin-left:-10px;"></a>
+                        <li class="list1"> <a href="#" class="hover"> <a href="https://play.google.com/store/apps/details?id=in.amazon.mShop.android.shopping" target="_blank"><img src="play-store-icon.svg" alt="" style="width:300px; height:50px; margin-top: -10px; margin-left:-80px;"></a></a>
+                        <li class="list1"> <a href="#" class="hover"> <a href="https://apps.apple.com/in/app/amazon-india-shop-and-pay/id1478350915" target="_blank"><img src="app-store-icon.svg" alt="" style="width:300px; height:50px; margin-top: -10px; margin-left:-150px;"></a></a>
+                        <li class="list1"> <a href="https://www.instagram.com/rakesh_pulavarthi/" class="hover" target="_blank"> <img src="rakesh_pulavarthi_qr.png" alt="" style="width:130px; height:130px; margin-top: -10px; margin-left:-90px;"></a>
+                        <li class="list"><a href="https://twitter.com/amazonminiTV" target="_blank"><i class="fa fa-twitter" style="font-size: 30px; color:rgb(255, 255, 255);margin-left: 10px; margin-top:-10px;"  class="h"></a></i>
+                        <li class="list"><a href="https://www.instagram.com/amazonminitv/" target="_blank"><i class="fa fa-instagram" style="font-size: 30px; color:silver;margin-left: 10px; margin-top:-10px;"  class="h"></a></i>
+                        <li class="list"><a href="https://www.facebook.com/AmazonminiTV" target="_blank"><i class="fa fa-facebook" style="font-size: 30px; color:silver;margin-left: 10px; margin-top:-10px;"  class="h"></a></i>
+                        <li class="list"><a href="https://www.youtube.com/channel/UC1NtcHxG3wiyhtbbPmIaMnA" target="_blank"><i class="fa fa-youtube" style="font-size: 30px; color:silver;margin-left: 10px; margin-top:-10px;"  class="h"></a></i>
+                     </ul>   
+                    </div>
+                 </div>
+ 
+                
+    </body>
+</html>                     
+    
